@@ -1,0 +1,74 @@
+configuration {
+	modi: "window,run,drun,ssh,filebrowser,combi";
+	font: "hack 10";
+	combi-modi: "window,drun,ssh";
+	icon-theme: "Papirus";
+	case-sensitive: false;
+	cycle: true;
+	filter: "";
+	scroll-method: 0;
+	normalize-match: true;
+	show-icons: true;
+
+	/*---------- Drun settings ----------*/
+	drun-categories: "";
+	drun-match-fields: "name,generic,exec,categories,keywords";
+	drun-display-format: "{name} [<span weight='light' size='small'><i>({generic})</i></span>]";
+	drun-show-actions: false;
+	drun-url-launcher: "xdg-open";
+	drun-use-desktop-cache: false;
+	drun-reload-desktop-cache: false;
+	drun {
+		/** Parse user desktop files. */
+		parse-user:   true;
+		/** Parse system desktop files. */
+		parse-system: true;
+	}
+
+	/*---------- Run settings ----------*/
+	run-command: "{cmd}";
+	run-list-command: "";
+	run-shell-command: "{terminal} -e {cmd}";
+
+	/*---------- Window switcher settings ----------*/
+	window-match-fields: "title,class,role,name,desktop";
+	window-command: "wmctrl -i -R {window}";
+	window-format: "{w} - {c} - {t:0}";
+	window-thumbnail: false;
+
+	/*---------- History and Sorting ----------*/
+	disable-history: false;
+	sorting-method: "normal";
+	max-history-size: 25;
+
+	/*---------- Display setting ----------*/
+	display-window: " ►";
+	display-windowcd: " ►";
+	display-run: " ↳";
+	display-ssh: " ↹";
+	display-drun: " ↳";
+	display-combi: " ►";
+	display-keys: " ";
+	display-filebrowser: " ⇥";
+
+	/*---------- Misc setting ----------*/
+	terminal: "alacritty";
+	font: "Mono 10";
+	sort: false;
+	threads: 0;
+	click-to-exit: true;
+
+	/*---------- File browser settings ----------*/
+	filebrowser {
+		directory: "~";
+		directories-first: true;
+		sorting-method:    "name";
+	}
+
+	/*---------- Other settings ----------*/
+	timeout {
+		action: "kb-cancel";
+		delay:  0;
+	}
+}
+@theme "android_notification"
