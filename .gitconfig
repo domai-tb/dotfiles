@@ -1,0 +1,12 @@
+[user]
+	name = <NAME>
+	email = <E-MAIL>
+	signingkey = <GPG KEY>
+[core]
+	editor = vim
+[init]
+	defaultBranch = main
+[commit]
+	gpgsign = true
+[url "ssh://git@github.com"]
+	insteadOf = https://github.com
